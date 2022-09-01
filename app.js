@@ -3,7 +3,7 @@ console.log('mail list')
 const app = new Vue({
     el: '#root',
     data: {
-        randomMail: "",
+        
         listRandomMail: []
     },
     mounted() {
@@ -11,14 +11,15 @@ const app = new Vue({
         while (i < 10) {
           axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then((res)  => {
-                console.log(res.data.response)
-                this.randomMail = res.data.response
-                if (this.listRandomMail.includes(this.randomMail)) {
-                    this.listRandomMail.push(this.RandomMail)
+            .then((res) => {
+                
+                // console.log(res.data.response)
+                const randomMail = res.data.response
+                if (!this.listRandomMail.includes(randomMail)) {
+                    this.listRandomMail.push(randomMail)
                 }
             })
-          i ++
+          i++;
         }
         
     },
