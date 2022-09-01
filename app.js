@@ -18,7 +18,7 @@ const app = new Vue({
                     this.listRandomMail.push(this.RandomMail)
                 }
             })
-            i ++
+          i ++
         }
         
     },
